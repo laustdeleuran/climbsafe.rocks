@@ -1,0 +1,70 @@
+name: Fetch from Notion and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch content from Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_PAGE_ID: ${{ vars.NOTION_PAGE_ID || '3e157aa7f94f8076a8fce2abbc43b9a1' }}
+        run: node scripts/fetch-notion.mjs
+
+      - name: Commit refreshed content
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/content.json public/notion
+          if git diff --staged --quiet; then
+            echo "No content changes to commit."
+          else
+            git commit -m "chore: refresh content from Notion [skip ci]"
+            git push
+          fi
+
+      - name: Install, build, and upload site
+        uses: withastro/action@v3
+        env:
+          # Project pages live at /<repo>; a <user>.github.io repo serves from /.
+          ASTRO_BASE: ${{ endsWith(github.event.repository.name, '.github.io') && '/' || format('/{0}', github.event.repository.name) }}
+          ASTRO_SITE: https://${{ github.repository_owner }}.github.io
+        with:
+          path: .
+          # Notion API needs to be reachable; default runner network is fine.
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

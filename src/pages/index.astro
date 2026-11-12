@@ -1,0 +1,173 @@
+---
+import content from '../data/content.json';
+
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+const asset = (src) => (src.startsWith('notion/') ? `${BASE}/${src}` : src);
+
+// Group consecutive list items so they can be wrapped in a single <ul>/<ol>.
+const groups = [];
+for (const block of content.blocks) {
+  const last = groups[groups.length - 1];
+  if (block.type === 'listItem' && last?.type === 'list') {
+    last.items.push(block);
+  } else if (block.type === 'listItem') {
+    groups.push({ type: 'list', ordered: block.ordered, items: [block] });
+  } else {
+    groups.push(block);
+  }
+}
+
+const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{content.title}</title>
+    <meta name="description" content={`Climbing and belaying resources from ${content.title}.`} />
+    <style>
+      :root {
+        --bg: #f6f4f0;
+        --card: #ffffff;
+        --ink: #2b2b2b;
+        --muted: #6b6b6b;
+        --accent: #c05621;
+        --accent-soft: #fdf0e7;
+        --border: #e5e0d8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.65;
+      }
+      .wrap { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+      header.hero { text-align: center; padding: 2.5rem 0 1rem; }
+      header.hero img { width: 100%; max-width: 860px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+      header.hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 1rem 0 0; letter-spacing: -0.02em; }
+      .tagline { color: var(--muted); margin: 0.5rem 0 0; }
+      .callout {
+        background: var(--accent-soft);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        margin: 1.5rem 0;
+      }
+      .callout p { margin: 0 0 0.75rem; }
+      .callout p:last-child { margin-bottom: 0; }
+      main { padding-bottom: 3rem; }
+      h2, h3, h4 { letter-spacing: -0.01em; }
+      h2 {
+        font-size: 1.6rem;
+        border-bottom: 3px solid var(--accent);
+        display: inline-block;
+        padding-bottom: 0.2rem;
+        margin: 2.5rem 0 0.75rem;
+      }
+      h3 { font-size: 1.25rem; margin: 1.75rem 0 0.5rem; }
+      h4 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+      .video-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        margin: 1rem 0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      }
+      .embed { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden; background: #000; }
+      .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .video-link { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.5rem; }
+      .content-image { width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); margin: 1rem 0; }
+      ul, ol { padding-left: 1.5rem; }
+      li { margin: 0.75rem 0; }
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 1.5rem 0 2.5rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+        text-align: center;
+      }
+      a { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hero">
+        {content.blocks
+          .filter((b) => b.type === 'image')
+          .slice(0, 1)
+          .map((b) => <img class="content-image" src={asset(b.src)} alt={b.alt} loading="eager" />)}
+        <h1>{content.icon} {content.title}</h1>
+        <p class="tagline">Climbing &amp; belaying resources from the Pacific Northwest</p>
+      </header>
+
+      <main>
+        {groups.map((group) => {
+          if (group.type === 'list') {
+            return group.ordered ? (
+              <ol>{group.items.map((item) => <li set:html={item.html} />)}</ol>
+            ) : (
+              <ul>{group.items.map((item) => <li set:html={item.html} />)}</ul>
+            );
+          }
+          const block = group;
+          if (block.type === 'heading') {
+            const Tag = headingLevels[block.level];
+            return <Tag set:html={block.html} />;
+          }
+          if (block.type === 'callout') {
+            return (
+              <div class="callout">
+                <p><span>{block.icon}</span></p>
+                <div set:html={block.html} />
+              </div>
+            );
+          }
+          if (block.type === 'paragraph' || block.type === 'quote') {
+            return block.type === 'quote'
+              ? <blockquote set:html={block.html} />
+              : <p set:html={block.html} />;
+          }
+          if (block.type === 'image') {
+            return <img class="content-image" src={asset(block.src)} alt={block.alt} loading="lazy" />;
+          }
+          if (block.type === 'video') {
+            return (
+              <div class="video-card">
+                <p class="video-link">
+                  <a href={block.url} target="_blank" rel="noopener">Watch on YouTube ↗</a>
+                </p>
+                {block.embedId ? (
+                  <div class="embed">
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${block.embedId}`}
+                      title="Embedded video"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    />
+                  </div>
+                ) : (
+                  <p><a href={block.url} target="_blank" rel="noopener">{block.url}</a></p>
+                )}
+              </div>
+            );
+          }
+          if (block.type === 'divider') {
+            return <hr />;
+          }
+          return null;
+        })}
+      </main>
+
+      <footer>
+        Content fetched from <a href={content.source} target="_blank" rel="noopener">Notion</a>
+        {content.fetchedAt && ` on ${content.fetchedAt.slice(0, 10)}`}.
+      </footer>
+    </div>
+  </body>
+</html>
