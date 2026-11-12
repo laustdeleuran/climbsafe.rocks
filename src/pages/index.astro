@@ -134,25 +134,20 @@ const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
             return <img class="content-image" src={asset(block.src)} alt={block.alt} loading="lazy" />;
           }
           if (block.type === 'video') {
-            return (
+            return block.embedId ? (
               <div class="video-card">
-                <p class="video-link">
-                  <a href={block.url} target="_blank" rel="noopener">Watch on YouTube ↗</a>
-                </p>
-                {block.embedId ? (
-                  <div class="embed">
-                    <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${block.embedId}`}
-                      title="Embedded video"
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    />
-                  </div>
-                ) : (
-                  <p><a href={block.url} target="_blank" rel="noopener">{block.url}</a></p>
-                )}
+                <div class="embed">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${block.embedId}`}
+                    title="Embedded video"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  />
+                </div>
               </div>
+            ) : (
+              <p><a href={block.url} target="_blank" rel="noopener">{block.url}</a></p>
             );
           }
           if (block.type === 'divider') {
