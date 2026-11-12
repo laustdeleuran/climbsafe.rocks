@@ -51,9 +51,10 @@ jobs:
       - name: Install, build, and upload site
         uses: withastro/action@v3
         env:
-          # Project pages live at /<repo>; a <user>.github.io repo serves from /.
-          ASTRO_BASE: ${{ endsWith(github.event.repository.name, '.github.io') && '/' || format('/{0}', github.event.repository.name) }}
-          ASTRO_SITE: https://${{ github.repository_owner }}.github.io
+          # With a custom domain (vars.CUSTOM_DOMAIN set), the site serves from '/'.
+          # Otherwise a project page serves at /<repo>; a *.github.io repo serves from '/'.
+          ASTRO_BASE: ${{ vars.CUSTOM_DOMAIN != '' && '/' || (endsWith(github.event.repository.name, '.github.io') && '/' || format('/{0}', github.event.repository.name)) }}
+          ASTRO_SITE: ${{ vars.CUSTOM_DOMAIN != '' && format('https://{0}', vars.CUSTOM_DOMAIN) || format('https://{0}.github.io', github.repository_owner) }}
         with:
           path: .
           # Notion API needs to be reachable; default runner network is fine.
