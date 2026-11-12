@@ -2,7 +2,7 @@
   "title": "Climb Safe",
   "icon": "🧗🏻",
   "source": "https://app.notion.com/p/Climb-Safe-3e157aa7f94f8076a8fce2abbc43b9a1",
-  "fetchedAt": "2026-11-12T15:17:07.603Z",
+  "fetchedAt": "2026-11-12T15:36:58.387Z",
   "blocks": [
     {
       "type": "image",
@@ -50,7 +50,8 @@
     },
     {
       "type": "video",
-      "embedId": null
+      "url": "https://youtu.be/w5ybJwZPZAQ?si=zDSc4D214jqx6BDo",
+      "embedId": "w5ybJwZPZAQ"
     },
     {
       "type": "paragraph",
@@ -58,7 +59,8 @@
     },
     {
       "type": "video",
-      "embedId": null
+      "url": "https://youtu.be/aHI8kIXNH5M?si=eMDV3b3WKzxxrBGn",
+      "embedId": "aHI8kIXNH5M"
     },
     {
       "type": "heading",
@@ -71,7 +73,8 @@
     },
     {
       "type": "video",
-      "embedId": null
+      "url": "https://www.youtube.com/watch?v=Ap9DaiXaPt0&list=PL5FEOhiQGSo8PBwTZPeiwQGcxQ0xB99Gt&index=12",
+      "embedId": "Ap9DaiXaPt0"
     },
     {
       "type": "paragraph",
@@ -79,7 +82,8 @@
     },
     {
       "type": "video",
-      "embedId": null
+      "url": "https://www.youtube.com/watch?v=9bPrcjTtKpk&list=PL5FEOhiQGSo8PBwTZPeiwQGcxQ0xB99Gt&index=13",
+      "embedId": "9bPrcjTtKpk"
     },
     {
       "type": "heading",
@@ -101,7 +105,8 @@
     },
     {
       "type": "video",
-      "embedId": null
+      "url": "https://www.youtube.com/shorts/an-OdDCWDPM",
+      "embedId": "an-OdDCWDPM"
     },
     {
       "type": "heading",
@@ -123,7 +128,8 @@
     },
     {
       "type": "video",
-      "embedId": null
+      "url": "https://youtu.be/94wiY17I5-o?si=V97I2uQgMlIoRmW-",
+      "embedId": "94wiY17I5-o"
     },
     {
       "type": "paragraph",
@@ -131,7 +137,8 @@
     },
     {
       "type": "video",
-      "embedId": null
+      "url": "https://www.youtube.com/watch?v=KFrr39f29IU",
+      "embedId": "KFrr39f29IU"
     },
     {
       "type": "heading",
