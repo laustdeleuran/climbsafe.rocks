@@ -94,7 +94,7 @@ const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
           .filter((b) => b.type === 'image')
           .slice(0, 1)
           .map((b) => <img class="content-image" src={asset(b.src)} alt={b.alt} loading="eager" />)}
-        <h1>{content.icon} {content.title}</h1>
+        <h1>{content.title}</h1>
         <p class="tagline">Climbing &amp; belaying resources from the Pacific Northwest</p>
       </header>
 
