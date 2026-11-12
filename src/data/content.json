@@ -1,46 +1,165 @@
 {
   "title": "Climb Safe",
   "icon": "🧗🏻",
-  "source": "https://app.notion.com/p/3e157aa7f94f8076a8fce2abbc43b9a1",
-  "fetchedAt": "2026-11-12T02:55:00.000Z",
+  "source": "https://app.notion.com/p/Climb-Safe-3e157aa7f94f8076a8fce2abbc43b9a1",
+  "fetchedAt": "2026-11-12T15:11:27.898Z",
   "blocks": [
-    { "type": "image", "src": "notion/hero.png", "alt": "Climb Safe hero image" },
+    {
+      "type": "image",
+      "src": "notion/3e157aa7-f94f-80e5-8547-c75761eac42d.png",
+      "alt": "Notion image"
+    },
     {
       "type": "callout",
       "icon": "👋🏻",
-      "html": "<p>Hi! We're <strong>Yoko</strong> and <strong>Laust</strong>, two amateur and hobbyist climbers who live Portland, Oregon.</p><p>During our time climbing in and around the Pacific Northwest, we sometimes meet people who needs a little help in learning how to belay better and safer.</p><p>To help you do that, we created this small collection of resources that helped us learn. We hope they're helpful to you.</p>"
+      "html": "Hi! We’re <strong>Yoko</strong> and <strong>Laust</strong>, two amateur and hobbyist climbers who live Portland, Oregon. "
     },
-    { "type": "paragraph", "html": "Before we get started, the best way to learn is through practice. So, in addition to all these resources, grab a trusted and experienced friend, and ask them to help you learn! Be curious, and practice!" },
-    { "type": "heading", "level": 1, "html": "Belaying" },
-    { "type": "paragraph", "html": "Belaying is arguably your number one skill as an outdoor climber. It requires practice and a willingness to want to keep learning. Having good friends teach you is invaluable, and we highly recommend taking a in-person belay class at your local climbing gym or climbing guide outfit, such as Portland-local <a href=\"https://everybodyclimbs.org/\" target=\"_blank\" rel=\"noopener\">Everybody Climbs</a> (Luis is awesome)." },
-    { "type": "paragraph", "html": "<a href=\"https://www.youtube.com/@HardIsEasy\" target=\"_blank\" rel=\"noopener\">Hard Is Easy</a> has a wonderful series called <a href=\"https://youtu.be/hEK2NCoET4E\" target=\"_blank\" rel=\"noopener\">Belay Masterclass on Youtube</a>. It's great, and we'd recommend you check out the whole thing. A few select videos we really like from that series." },
-    { "type": "heading", "level": 2, "html": "Basic Belay Technique" },
-    { "type": "paragraph", "html": "<strong>Top Rope Belaying:</strong> <a href=\"https://youtu.be/w5ybJwZPZAQ\" target=\"_blank\" rel=\"noopener\">How to Belay - Top Rope</a>" },
-    { "type": "video", "url": "https://youtu.be/w5ybJwZPZAQ", "embedId": "w5ybJwZPZAQ" },
-    { "type": "paragraph", "html": "<strong>Lead Belaying:</strong> <a href=\"https://youtu.be/aHI8kIXNH5M\" target=\"_blank\" rel=\"noopener\">Lead Belaying - Slack Management, Efficient Taking &amp; More</a>" },
-    { "type": "video", "url": "https://youtu.be/aHI8kIXNH5M", "embedId": "aHI8kIXNH5M" },
-    { "type": "heading", "level": 2, "html": "Soft Catches and Low Falls" },
-    { "type": "paragraph", "html": "<strong>Soft Catches:</strong> <a href=\"https://www.youtube.com/watch?v=Ap9DaiXaPt0\" target=\"_blank\" rel=\"noopener\">The Only Soft Catch video You Need to See | Ep.12</a>" },
-    { "type": "video", "url": "https://www.youtube.com/watch?v=Ap9DaiXaPt0", "embedId": "Ap9DaiXaPt0" },
-    { "type": "paragraph", "html": "<strong>Low Falls:</strong> <a href=\"https://www.youtube.com/watch?v=9bPrcjTtKpk\" target=\"_blank\" rel=\"noopener\">Sketchy Low Falls</a>" },
-    { "type": "video", "url": "https://www.youtube.com/watch?v=9bPrcjTtKpk", "embedId": "9bPrcjTtKpk" },
-    { "type": "heading", "level": 1, "html": "Gears and Knots" },
-    { "type": "heading", "level": 2, "html": "Anchors" },
-    { "type": "paragraph", "html": "<a href=\"https://www.youtube.com/channel/UCJkDqdRcvmJLXxtRGlW1SwA\" target=\"_blank\" rel=\"noopener\">Summit Seekers Experience</a> has some great shorts on anchors and anchor management:" },
-    { "type": "paragraph", "html": "<strong>Anchors:</strong> <a href=\"https://www.youtube.com/shorts/an-OdDCWDPM\" target=\"_blank\" rel=\"noopener\">The Three Anchors I use in Rock Climbing</a>" },
-    { "type": "video", "url": "https://www.youtube.com/shorts/an-OdDCWDPM", "embedId": "an-OdDCWDPM" },
-    { "type": "heading", "level": 1, "html": "Self-Rescue" },
-    { "type": "heading", "level": 3, "html": "Systems" },
-    { "type": "paragraph", "html": "<a href=\"https://www.youtube.com/@CanyonsCrags\" target=\"_blank\" rel=\"noopener\">Canyons &amp; Crags</a> have some great videos on knots and rescue systems. Lots of snark, but the content and instructions are solid:" },
-    { "type": "paragraph", "html": "<strong>Munter-Mule-Overhand:</strong> <a href=\"https://youtu.be/94wiY17I5-o\" target=\"_blank\" rel=\"noopener\">MMO, the Munter-Mule-Overhand; rigging wisely for contingencies</a>" },
-    { "type": "video", "url": "https://youtu.be/94wiY17I5-o", "embedId": "94wiY17I5-o" },
-    { "type": "paragraph", "html": "<strong>Lifting and shifting:</strong> <a href=\"https://www.youtube.com/watch?v=KFrr39f29IU\" target=\"_blank\" rel=\"noopener\">Lifts &amp; Shifts - quick and efficient partner rescue techniques</a>" },
-    { "type": "video", "url": "https://www.youtube.com/watch?v=KFrr39f29IU", "embedId": "KFrr39f29IU" },
-    { "type": "heading", "level": 3, "html": "Resources" },
-    { "type": "listItem", "ordered": false, "html": "<strong>Course: </strong><strong><a href=\"https://smithrockclimbing.com/clinics/climber-self-rescue/\" target=\"_blank\" rel=\"noopener\">Climber Self Rescue with Smith Rock Climbing</a></strong><br />Nothing beats actually learning and practicing skills in person. We took this class, and it was worth every minute. Probably worth thinking about this as a CPR-style class where you should retake it every few years." },
-    { "type": "listItem", "ordered": false, "html": "<strong>Book: </strong><strong><a href=\"https://www.amazon.com/Climbing-Self-Rescue-Essential-Technical-Improvised/dp/1680516205\" target=\"_blank\" rel=\"noopener\">Climbing Self Rescue by Ian Nicholson</a></strong><br />Ian's book is <em>so</em> thorough and hands-on, with lots of step-by-step photos. The book methodically walks through different scenarios and how you would apply different systems and solutions. Highly recommend having a few short practice ropes and carabiners ready to practice as you read it." },
-    { "type": "heading", "level": 1, "html": "Disclaimer" },
-    { "type": "paragraph", "html": "Climbing and belaying involve inherent risks, including serious injury or death. The information and resources shared here are based on our personal experiences and opinions as amateur climbers. They are not a substitute for professional instruction, certified training, or your own research. Always prioritize safety, use proper equipment, and consult qualified experts or official guidelines (e.g., from climbing gyms, organizations like <a href=\"https://everybodyclimbs.org/\" target=\"_blank\" rel=\"noopener\">Everybody Climbs</a>, <a href=\"https://mazamas.org/\" target=\"_blank\" rel=\"noopener\">Mazamas</a>, <a href=\"https://www.accessfund.org/\" target=\"_blank\" rel=\"noopener\">Access Fund</a>, or professional instructors). We assume no responsibility for any actions you take based on this content. Climb at your own risk." },
-    { "type": "paragraph", "html": "<strong>Be safe. Have fun.</strong>" }
+    {
+      "type": "paragraph",
+      "html": "During our time climbing in and around the Pacific Northwest, we sometimes meet people who needs a little help in learning how to belay better and safer. "
+    },
+    {
+      "type": "paragraph",
+      "html": "To help you do that, we created this small collection of resources that helped us learn. We hope they’re helpful to you."
+    },
+    {
+      "type": "paragraph",
+      "html": "Before we get started, the best way to learn is through practice. So, in addition to all these resources, grab a trusted and experienced friend, and ask them to help you learn! Be curious, and practice! "
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "html": "Belaying"
+    },
+    {
+      "type": "paragraph",
+      "html": "Belaying is arguably your number one skill as an outdoor climber. It requires practice and a willingness to want to keep learning. Having good friends teach you is invaluable, and we highly recommend taking a in-person belay class at your local climbing gym or climbing guide outfit, such as Portland-local <a href=\"https://everybodyclimbs.org/\" target=\"_blank\" rel=\"noopener\">Everybody Climbs</a> (Luis is awesome).  "
+    },
+    {
+      "type": "paragraph",
+      "html": "<a href=\"https://www.youtube.com/@HardIsEasy\" target=\"_blank\" rel=\"noopener\">Hard Is Easy</a> has a wonderful series called <a href=\"https://youtu.be/hEK2NCoET4E?si=QUQXqFB8bRQcF0iU\" target=\"_blank\" rel=\"noopener\">Belay Masterclass on Youtube</a>. It’s great, and we’d recommend you check out the whole thing. A few select videos we really like from that series."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "html": "Basic Belay Technique"
+    },
+    {
+      "type": "paragraph",
+      "html": "<strong>Top Rope Belaying: </strong><a href=\"https://youtu.be/w5ybJwZPZAQ?si=zDSc4D214jqx6BDo\" target=\"_blank\" rel=\"noopener\">How to Belay - Top Rope</a>"
+    },
+    {
+      "type": "video",
+      "embedId": null
+    },
+    {
+      "type": "paragraph",
+      "html": "<strong>Lead Belaying: </strong><a href=\"https://youtu.be/aHI8kIXNH5M?si=eMDV3b3WKzxxrBGn\" target=\"_blank\" rel=\"noopener\">Lead Belaying - Slack Management, Efficient Taking &amp; More</a>"
+    },
+    {
+      "type": "video",
+      "embedId": null
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "html": "Soft Catches and Low Falls"
+    },
+    {
+      "type": "paragraph",
+      "html": "<strong>Soft Catches: </strong><a href=\"https://www.youtube.com/watch?v=Ap9DaiXaPt0\" target=\"_blank\" rel=\"noopener\">The Only Soft Catch video You Need to See | Ep.12</a>"
+    },
+    {
+      "type": "video",
+      "embedId": null
+    },
+    {
+      "type": "paragraph",
+      "html": "<strong>Low Falls: </strong><a href=\"/p/3e157aa7f94f8076a8fce2abbc43b9a1#3e157aa7f94f802db824e1ecfb0f995a\" target=\"_blank\" rel=\"noopener\">Sketchy Low Falls</a>"
+    },
+    {
+      "type": "video",
+      "embedId": null
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "html": "Gears and Knots"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "html": "Anchors"
+    },
+    {
+      "type": "paragraph",
+      "html": "<a href=\"https://www.youtube.com/channel/UCJkDqdRcvmJLXxtRGlW1SwA\" target=\"_blank\" rel=\"noopener\">Summit Seekers Experience</a> has some great shorts on anchors and anchor management:"
+    },
+    {
+      "type": "paragraph",
+      "html": "<strong>Anchors: </strong><a href=\"https://www.youtube.com/shorts/an-OdDCWDPM\" target=\"_blank\" rel=\"noopener\">The Three Anchors I use in Rock Climbing</a>"
+    },
+    {
+      "type": "video",
+      "embedId": null
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "html": "Self-Rescue"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "html": "Systems"
+    },
+    {
+      "type": "paragraph",
+      "html": "<a href=\"https://www.youtube.com/@CanyonsCrags\" target=\"_blank\" rel=\"noopener\">Canyons &amp; Crags</a> have some great videos on knots and rescue systems. Lots of snark, but the content and instructions are solid:"
+    },
+    {
+      "type": "paragraph",
+      "html": "<strong>Munter-Mule-Overhand: </strong><a href=\"https://youtu.be/94wiY17I5-o?si=V97I2uQgMlIoRmW-\" target=\"_blank\" rel=\"noopener\">MMO, the Munter-Mule-Overhand; rigging wisely for contingencies</a>"
+    },
+    {
+      "type": "video",
+      "embedId": null
+    },
+    {
+      "type": "paragraph",
+      "html": "<strong>Lifting and shifting</strong>: <a href=\"https://www.youtube.com/watch?v=KFrr39f29IU\" target=\"_blank\" rel=\"noopener\">Lifts &amp; Shifts - quick and efficient partner rescue techniques</a>"
+    },
+    {
+      "type": "video",
+      "embedId": null
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "html": "Resources"
+    },
+    {
+      "type": "listItem",
+      "ordered": false,
+      "html": "<strong>Course: </strong><a href=\"https://smithrockclimbing.com/clinics/climber-self-rescue/\" target=\"_blank\" rel=\"noopener\"><strong>Climber Self Rescue with Smith Rock Climbing</strong></a><strong>\n</strong>Nothing beats actually learning and practicing skills in person. We took this class, and it was worth every minute. Probably worth thinking about this as a CPR-style class where you should retake it every few years. \n"
+    },
+    {
+      "type": "listItem",
+      "ordered": false,
+      "html": "<strong>Book: </strong><a href=\"https://www.amazon.com/Climbing-Self-Rescue-Essential-Technical-Improvised/dp/1680516205/ref=sr_1_1?adgrpid=1330411495172016&dib=eyJ2IjoiMSJ9.3rFjJYqOPaYz-Mj-Ll-lm9j5CfNxZ7b6-vFEHJkzt7O1C_SvXJUwqL2pMrdtxnS68uZ0dhJGQb0fNuXHH8HceikVPmWjmQfe_rZzPWqoEUN8-Avt35GTU1qr0G78WSSAYh-tHczHStiZ-NtvTt1ZJe4-cNBGGswS3QqgUuFDD1vQvqk52RIfQNEeU74-kOViy2g2haAcIjakyAusa9reFIXMmif10QyVPpmmm6e1Uck.De8295NKYu7x_2PQWjpTGBsmQIKh1PJbwcnEb7Jbqgk&dib_tag=se&gb=2&hvadid=83150985196146&hvbmt=be&hvdev=c&hvexpln=0&hvlocphy=109754&hvnetw=o&hvocijid=1301699222418192238--&hvqmt=e&hvtargid=kwd-83151791258311%3Aloc-190&hydadcr=2795_13536447&keywords=climbing%20self%20rescue%20ian%20nicholson&mcid=bdb431fcb1133bd582b173ff9d9b632f&qid=1789936089&sr=8-1\" target=\"_blank\" rel=\"noopener\"><strong>Climbing Self Rescue by Ian Nicholson</strong></a><strong>\n</strong>Ian’s book is <em>so</em> thorough and hands-on, with lots of step-by-step photos. The book methodically walks through different scenarios and how you would apply different systems and solutions. Highly recommend having a few short practice ropes and carabiners ready to practice as you read it."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "html": "<strong>Disclaimer</strong>"
+    },
+    {
+      "type": "paragraph",
+      "html": "Climbing and belaying involve inherent risks, including serious injury or death. The information and resources shared here are based on our personal experiences and opinions as amateur climbers. They are not a substitute for professional instruction, certified training, or your own research. Always prioritize safety, use proper equipment, and consult qualified experts or official guidelines (e.g., from climbing gyms, organizations like <a href=\"https://everybodyclimbs.org/\" target=\"_blank\" rel=\"noopener\">Everybody Climbs</a>, <a href=\"https://mazamas.org/\" target=\"_blank\" rel=\"noopener\">Mazamas</a>, <a href=\"https://www.accessfund.org/\" target=\"_blank\" rel=\"noopener\">Access Fund</a>, or professional instructors). We assume no responsibility for any actions you take based on this content. Climb at your own risk. "
+    },
+    {
+      "type": "paragraph",
+      "html": "Be safe. Have fun."
+    }
   ]
 }
