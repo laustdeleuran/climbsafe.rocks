@@ -80,13 +80,6 @@ const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
       .content-image { width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); margin: 1rem 0; }
       ul, ol { padding-left: 1.5rem; }
       li { margin: 0.75rem 0; }
-      footer {
-        border-top: 1px solid var(--border);
-        padding: 1.5rem 0 2.5rem;
-        color: var(--muted);
-        font-size: 0.85rem;
-        text-align: center;
-      }
       a { color: var(--accent); }
     </style>
   </head>
@@ -156,9 +149,6 @@ const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
         })}
       </main>
 
-      <footer>
-        Content fetched from <a href={content.source} target="_blank" rel="noopener">Notion</a>.
-      </footer>
     </div>
   </body>
 </html>
