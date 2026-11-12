@@ -150,7 +150,6 @@ async function main() {
     title,
     icon: page.icon?.emoji || '',
     source: page.url,
-    fetchedAt: new Date().toISOString(),
     blocks,
   };
   await writeFile('src/data/content.json', JSON.stringify(content, null, 2) + '\n');
