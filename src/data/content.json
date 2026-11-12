@@ -11,15 +11,7 @@
     {
       "type": "callout",
       "icon": "👋🏻",
-      "html": "Hi! We’re <strong>Yoko</strong> and <strong>Laust</strong>, two amateur and hobbyist climbers who live Portland, Oregon. "
-    },
-    {
-      "type": "paragraph",
-      "html": "During our time climbing in and around the Pacific Northwest, we sometimes meet people who needs a little help in learning how to belay better and safer. "
-    },
-    {
-      "type": "paragraph",
-      "html": "To help you do that, we created this small collection of resources that helped us learn. We hope they’re helpful to you."
+      "html": "<p>Hi! We’re <strong>Yoko</strong> and <strong>Laust</strong>, two amateur and hobbyist climbers who live Portland, Oregon. </p><p>During our time climbing in and around the Pacific Northwest, we sometimes meet people who needs a little help in learning how to belay better and safer. </p><p>To help you do that, we created this small collection of resources that helped us learn. We hope they’re helpful to you.</p>"
     },
     {
       "type": "paragraph",

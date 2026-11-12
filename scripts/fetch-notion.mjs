@@ -128,6 +128,22 @@ async function fetchBlocks(blockId, out) {
   do {
     const data = await api(`/blocks/${blockId}/children?page_size=100${cursor ? `&start_cursor=${cursor}` : ''}`);
     for (const block of data.results) {
+      if (block.type === 'callout') {
+        const paras = [richTextToHtml(block.callout.rich_text)];
+        if (block.has_children) {
+          const children = [];
+          await fetchBlocks(block.id, children);
+          for (const child of children) {
+            if (child.type === 'paragraph') paras.push(child.html);
+          }
+        }
+        out.push({
+          type: 'callout',
+          icon: block.callout.icon?.emoji || '💡',
+          html: paras.map((p) => `<p>${p}</p>`).join(''),
+        });
+        continue;
+      }
       const converted = await convertBlock(block);
       if (converted) out.push(converted);
       if (block.has_children) {

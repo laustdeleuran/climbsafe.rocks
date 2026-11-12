@@ -57,14 +57,19 @@ const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
       header.hero h1 { font-size: clamp(2.75rem, 7vw, 4rem); margin: 0; letter-spacing: -0.02em; }
       .tagline { color: var(--muted); margin: 0.5rem 0 0; }
       .callout {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
         background: #e6e4e0;
         border: none;
         border-radius: 12px;
         padding: 1rem 1.25rem;
         margin: 1.5rem 0;
       }
-      .callout p { margin: 0 0 0.75rem; }
-      .callout p:last-child { margin-bottom: 0; }
+      .callout .icon { flex: none; font-size: 1.1rem; line-height: 1.65; }
+      .callout .body { flex: 1; }
+      .callout .body p { margin: 0 0 0.75rem; }
+      .callout .body p:last-child { margin-bottom: 0; }
       main { padding-bottom: 3rem; }
       h1, h2, h3, h4 {
         font-family: 'Londrina Solid', 'Commissioner', sans-serif;
@@ -111,8 +116,8 @@ const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
           if (block.type === 'callout') {
             return (
               <div class="callout">
-                <p><span>{block.icon}</span></p>
-                <div set:html={block.html} />
+                <span class="icon">{block.icon}</span>
+                <div class="body" set:html={block.html} />
               </div>
             );
           }
