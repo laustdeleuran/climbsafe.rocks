@@ -109,8 +109,15 @@ function convertBlock(block) {
   if (t === 'image') {
     return convertImage(block);
   }
-  if (t === 'embed' || t === 'bookmark' || t === 'video') {
-    const url = block[t].url;
+  if (t === 'embed' || t === 'bookmark' || t === 'video' || t === 'link_preview') {
+    const data = block[t];
+    const url = data?.url || data?.external?.url || data?.file?.url;
+    if (!url) {
+      console.warn(
+        `Skipping ${t} block with no resolvable URL: ${JSON.stringify(block)}`
+      );
+      return null;
+    }
     return { type: 'video', url, embedId: ytId(url) };
   }
   return null;
