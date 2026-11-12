@@ -21,6 +21,12 @@ for (const block of content.blocks) {
 }
 
 const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
+
+const description =
+  'A small collection of climbing and belaying resources from Yoko and Laust, two amateur climbers in Portland, Oregon.';
+const heroBlock = content.blocks.find((b) => b.type === 'image');
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || '';
+const ogImage = heroBlock ? `${siteUrl}${asset(heroBlock.src)}` : undefined;
 ---
 
 <!doctype html>
@@ -29,11 +35,24 @@ const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{content.title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={content.title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta property="og:image:alt" content={heroBlock.alt} />}
+    {ogImage && <meta property="og:image:width" content="1512" />}
+    {ogImage && <meta property="og:image:height" content="820" />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={content.title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     <link
       rel="icon"
       href={`data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${content.icon}</text></svg>`}
     />
-    <meta name="description" content={`Climbing and belaying resources from ${content.title}.`} />
+
     <style>
       :root {
         --bg: #f6f4f0;
