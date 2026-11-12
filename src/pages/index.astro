@@ -74,8 +74,8 @@ const headingLevels = { 1: 'h2', 2: 'h3', 3: 'h4' };
         overflow: hidden;
       }
       .callout .body { flex: 1; }
-      .callout .body p { margin: 0 0 0.75rem; }
-      .callout .body p:last-child { margin-bottom: 0; }
+      .callout :global(p) { margin: 0 0 0.75rem; }
+      .callout :global(p:last-child) { margin-bottom: 0; }
       main { padding-bottom: 3rem; }
       h1, h2, h3, h4 {
         font-family: 'Londrina Solid', 'Commissioner', sans-serif;
